@@ -1,0 +1,92 @@
+/*//居中不换行布局*/
+.flexClsNormal {
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: center;
+}
+.flexClsItemNormal {
+    display: flex;
+    display: -webkit-flex; /* Safari */
+}
+/*// 垂直居中布局*/
+   .flexClsDirectcolumn {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: column;
+       flex-wrap:wrap;
+       align-items:flex-start;
+       justify-content: center;
+   }
+.flexClsDirectcolumn > div{
+    white-space: nowrap;
+}
+/*// 高度补全*/
+   .flexItemFlexHigFull {
+       flex: 1;
+   }
+
+/*// 左对齐布局*/
+   .flexClsDirectLeft {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: row;
+       flex-wrap:nowrap;
+       justify-content: flex-start;
+   }
+/*// 左对齐布局,换行*/
+.flexClsDirectwWrapLeft {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: row;
+       flex-wrap:wrap;
+       justify-content: flex-start;
+   }
+/*// 右对齐布局*/
+   .flexClsDirectRight {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: row;
+       flex-wrap:nowrap;
+       justify-content: flex-end;
+   }
+/*// 两端对齐,不换行，项目之间的间隔都相等*/
+.flexClsNowrapSpcBtw {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: row;
+       flex-wrap:nowrap;
+       justify-content: space-between;
+   }
+/*// 两端对齐,不换行，每个项目两侧的间隔相等*/
+.flexClsNowrapSpcArd {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: row;
+       flex-wrap:nowrap;
+       justify-content: space-around;
+   }
+/*// 两端对齐,超出换行，每个项目两侧的间隔相等*/
+.flexClsWrapSpcArd {
+       display: flex;
+       display: -webkit-flex; /* Safari */
+       flex-direction: row;
+       flex-wrap:wrap;
+       justify-content: space-between;
+   }
+
+/*// 用于垂直布局，固定一个div高度，另一个div填充剩余的高度*/
+   .flexColumBox {
+       display: flex;
+       flex-flow: column;
+       align-items: stretch;
+   }
+/*// 固定高度*/
+   .fixedHig{
+       flex: 0;
+   }
+/*// 自动填充剩余区域*/
+   .autoFullHig{
+       flex: 1;
+   }
