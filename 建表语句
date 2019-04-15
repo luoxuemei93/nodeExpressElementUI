@@ -1,0 +1,41 @@
+# 用户表
+ CREATE TABLE user(
+    username varchar(50) NOT NULL,
+    account varchar(50) NULL,
+    password varchar(50) NULL,
+    email varchar(50) NULL,
+    phone varchar(50) NULL,
+    card varchar(50) NULL,
+    birth varchar(200) NULL,
+    sex varchar(1) NULL,
+    repeatPass datetime NULL
+)
+
+#readerdata表
+ CREATE TABLE readerdata(
+    id varchar(50) NOT NULL,
+    name varchar(50) NULL,
+    province varchar(50) NULL,
+    city varchar(50) NULL,
+    address varchar(200) NULL,
+    zip varchar(50) NULL,
+    phone varchar(200) NULL,
+    card varchar(1) NULL,
+    email varchar(50) NULL,
+    date datetime NULL
+)
+#品牌表
+ CREATE TABLE brandDB(
+    pname varchar(50) NOT NULL, #品牌名称
+    parentName varchar(50) NULL #父级品牌
+)
+
+操作：
+    1.订单id和购物车id设置自增长
+    alter table questionlib modify id int(11) auto_increment;
+
+删除自增属性：ALTER TABLE `orderdetailtable` CHANGE orderNumber orderNumber INT(225) UNSIGNED NOT NULL;
+添加自增属性：ALTER TABLE `members` CHANGE uid uid INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+    2.时间格式设置为当前时间
+        ALTER TABLE `ordertable` MODIFY COLUMN  `orderDate` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '下单时间' ;

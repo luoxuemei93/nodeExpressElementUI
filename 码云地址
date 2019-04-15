@@ -1,0 +1,18 @@
+https://gitee.com/wanghao-mayun/vue_express_mysql_node/blob/master/README.md
+安装步骤
+https://github.com/sakila1012/vue-login-manage-system.git     // 把项目下载到本地
+cd manage-system    // 进入项目目录
+npm install         // 安装项目依赖，等待安装完成之后
+
+本地开发
+// 开启前端服务器，浏览器访问 http://localhost:8083，在根目录下执行下面命令
+npm run dev
+
+服务端开发
+// 开启后端服务器
+cd service
+node app
+
+构建生产
+// 执行构建命令，生成的dist文件夹放在服务器下即可访问
+npm run build
