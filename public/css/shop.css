@@ -1,0 +1,17 @@
+.shopCls .el-dialog__body .el-checkbox {
+    width: 100%;
+    margin: 10px 0px;
+    border-bottom: 1px solid #ABCCED;
+}
+.shopCls .el-dialog__body .el-checkbox__input {
+    width: 8%;
+    float: left;
+    display: inline-block;
+    margin: auto;
+    height: 100%;
+}
+.shopCls .el-dialog__body .el-checkbox__label {
+    width: 88%;
+    float: left;
+    display: inline-block;
+}

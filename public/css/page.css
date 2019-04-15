@@ -1,0 +1,118 @@
+.app-container {
+    width: 100%;
+    height: 100%;
+}
+.content {
+    overflow: hidden;
+}
+.el-scrollbar {
+    height: 100%;
+    overflow-y: auto;
+}
+.el-scrollbar .el-scrollbar__wrap {
+    width: 98%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/*卡片*/
+#app .box-card {
+    border:none;
+}
+#app .el-card__header {
+    padding: 5px;
+    color: #111;
+}
+#app .el-card__body {
+    padding: 5px;
+    color: #111;
+    height: 100%;
+}
+#app .el-card__body  .item {
+    height: 100%;
+}
+#app .listRstRight .eachItem{
+    width: 240px;
+    height: 220px;
+    float: left;
+}
+#app .listRstRight .eachItem .orderBtn {
+    text-align: right;
+    margin-right: 10px;
+}
+#app .listRstRight .eachItem .descCls {
+    height: 42px;
+    overflow: hidden;
+}
+#app .listRstRight .eachItem .imgCls{
+    height: 60%;
+    width: 100%;
+}
+#app .listRstRight .eachItem .imgCls img{
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+#app .box-card{
+    width: 100%;
+    height: 100%;
+}
+#app .box-card .cardTitle {
+    border-bottom: 1px solid #ccc;
+    padding: 3px 0px;
+}
+     /*页面搜索区域*/
+.filter-container {padding-bottom:10px;width: 100%}
+.filter-container .filter-item {width: 70%;}
+.filter-container .filter-span {width: 25%;color: #666666;display: inline-block;text-align: right;}
+
+/*flex布局*/
+.flexBox{
+    display:flex;/*设为伸缩容器*/
+    flex-flow:row;/*伸缩项目单行排列*/
+}
+.flexAutoWidth{
+    flex:1;     /*flex:1*/
+}
+/* 用于垂直布局，固定一个div高度，另一个div填充剩余的高度*/
+.flexColumBox {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+ /*固定高度*/
+.fixedHig{
+    flex: 0;
+}
+ /*自动填充剩余区域*/
+.autoFullHig{
+    flex: 1;
+}
+
+
+/**/
+.dialogLeft {
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+
+.dialogRight{
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+.dialogRight .dialogEachCls {
+    width: 100%;
+    padding: 5px;
+}
+.dialogRight .dialogEachCls .label{
+    width: 70px;
+    display: inline-block;
+    text-align: right;
+}
+
+/*表格*/
+.el-table__row .cell span{
+    white-space: nowrap;
+}
