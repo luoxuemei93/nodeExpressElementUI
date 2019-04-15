@@ -1,0 +1,99 @@
+var path = require('path')
+var utils = require('./utils')
+var webpack = require('webpack')
+var config = require('../config')
+var vueLoaderConfig = require('./vue-loader.conf')
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
+module.exports = {
+  entry: {
+    app: ['babel-polyfill','./src/main.js']
+  },
+  output: {
+    path: config.build.assetsRoot,
+    filename: '[name].js',
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    // 添加代码
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        jquery: "jquery",
+        "window.jQuery": "jquery"
+      })
+    ],
+    modules: [
+      resolve('src'),
+      resolve('node_modules')
+    ],
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+      'src': resolve('src'),
+      'assets': resolve('src/assets'),
+      'components': resolve('src/components')
+    }
+  },
+  module: {
+      rules: utils.styleLoaders({
+          sourceMap: config.build.productionSourceMap,
+          extract: true
+      }),
+    rules: [
+        {
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader',
+            exclude: /node_modules/
+        },
+        {
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
+        },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [resolve('src'), resolve('test'),
+              resolve('node_modules/element-ui/packages'),
+              resolve('node_modules/element-ui/src')]  // 添加这两个路径下的文件处理，将es6转化为es5
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.less$/,
+        loader: "style-loader!css-loader!less-loader",
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        }
+      }
+    ]
+  },
+
+    // plugins: [
+    //     new webpack.DllReferencePlugin({
+    //       context: path.resolve(__dirname, '..'),
+    //       manifest: require('./vendor-manifest.json')
+    //     })
+    // ]
+}
